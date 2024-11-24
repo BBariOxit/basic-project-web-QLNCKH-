@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+body {
+    /* background-color: #f5f5f5; */
+    padding: 20px;
+}
 
 :root {
     --primary-color: #00966D;
