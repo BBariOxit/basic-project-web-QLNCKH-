@@ -103,3 +103,36 @@ function savePassword() {
 //         closeModal();
 //     }
 // }
+
+
+
+//detail
+// const projectContainer = document.getElementById('projectContainer');
+// const detailPage = document.getElementById('detailPage');
+// const backButton = document.getElementById('backButton');
+
+// backButton.addEventListener('click', function() {
+//     detailPage.style.display = 'none';
+//     projectContainer.style.display = 'block';
+//     window.scrollTo(0, 0);
+// });
+
+function showDetail() {
+    document.getElementById('projectContainer').style.display = 'none';
+    document.getElementById('detailPage').style.display = 'block';
+}
+
+// Thêm nút back vào lịch sử duyệt web
+window.onpopstate = function(event) {
+    if (document.getElementById('detailPage').style.display === 'block') {
+        document.getElementById('detailPage').style.display = 'none';
+        document.getElementById('projectContainer').style.display = 'block';
+    }
+};
+
+// Thêm state mới vào history khi chuyển sang trang chi tiết
+function showDetail() {
+    document.getElementById('projectContainer').style.display = 'none';
+    document.getElementById('detailPage').style.display = 'block';
+    history.pushState({page: 'detail'}, '', '?page=detail');
+}
