@@ -31,7 +31,7 @@
             <i class="fas fa-info-circle"></i>
             <span>Thông tin</span>
         </a>
-        <a href="/index.html" class="menu-item" data-tooltip="Các đề tài nghiên cứu">
+        <a href="./index.html" class="menu-item" data-tooltip="Các đề tài nghiên cứu">
             <i class="fas fa-folder"></i>
             <span>Các đề tài nghiên cứu</span>
         </a>
@@ -73,15 +73,6 @@
                     </div>
     
                     <div class="search-field">
-                        <label>Trạng thái</label>
-                        <select>
-                            <option>Đề tài đã nghiệm thu</option>
-                            <option>Đề tài đã hủy</option>
-                            <option>Đề tài đang thực hiện</option>
-                        </select>
-                    </div>
-    
-                    <div class="search-field">
                         <label>Xếp loại nghiệm thu</label>
                         <select>
                             <option>Tốt</option>
@@ -89,62 +80,37 @@
                             <option>Trung bình</option>
                         </select>
                     </div>
-                </div>
-            </div>
-            <div onclick="showDetail()" class="project-card">
-                <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning Project" class="project-image">
-                <div class="project-info">
-                    <h2 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h2>
-                    <div class="project-details">
-                        <p>Chủ nhiệm: Ths.Trần Văn A</p>
-                        <p>Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+
+                    <div class="filter-status">
+                        <label>Trạng thái</label>
+                        <div class="status-filter-group">
+                            <button class="status-button selected" data-status="all">Tất cả</button>
+                            <button class="status-button" data-status="completed">Đã nghiệm thu</button>
+                            <button class="status-button" data-status="in-progress">Đang thực hiện</button>
+                            <button class="status-button" data-status="cancelled">Đã hủy</button>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card-note">
-                    <div class="project-card-note-msg">Đã nghiệm thu</div> 
-                </div>
-                <div class="status-badge">
-                    <div class="status-msg">Kết quả nghiệm thu</div>
-                    <div class="status-badge-info">Tốt</div>
-                </div>
-            </div>
-    
-            <div class="project-card">
-                <img src="./img/Blockchain-Applications-Analysed-through-Workshop-Sessions-1536x768.webp" alt="Media System Project" class="project-image">
-                <div class="project-info">
-                    <h2 class="project-title">Xây dựng hệ thống quảng bá thông tin Media qua mạng</h2>
-                    <div class="project-details">
-                        <p>Chủ nhiệm: Ths.Trần Văn A</p>
-                        <p>Thời gian thực hiện: 25/12/2021 - 11/03/2022</p>
-                    </div>
-                </div>
-                <div class="project-card-note">
-                    <div class="project-card-note-msg">Đã nghiệm thu</div> 
-                </div>
-                <div class="status-badge">
-                    <div class="status-msg">Kết quả nghiệm thu</div>
-                    <div class="status-badge-info">Tốt</div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning Project" class="project-image">
-                <div class="project-info">
-                    <h2 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h2>
-                    <div class="project-details">
-                        <p>Chủ nhiệm: Ths.Trần Văn A</p>
-                        <p>Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
-                    </div>
-                </div>
-                <div class="project-card-note">
-                    <div class="project-card-note-msg">Đã nghiệm thu</div> 
-                </div>
-                <div class="status-badge">
-                    <div class="status-msg">Kết quả nghiệm thu</div>
-                    <div class="status-badge-info">Tốt</div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div onclick="showDetail()" class="project-card">
+                <div class="project-image">
+                    <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning System">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h3>
+                    <p class="project-info">Chủ nhiệm: Ths.Trần Văn A</p>
+                    <p class="project-info">Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+                    <div class="project-status">
+                        <span class="status-badge">Đã nghiệm thu</span>
+                        <div class="status-result">
+                            <span>Kết quả nghiệm thu</span>
+                            <span class="result-badge">Tốt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div onclick="showDetail()" class="project-card">
                 <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning Project" class="project-image">
                 <div class="project-info">
                     <h2 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h2>
@@ -160,25 +126,62 @@
                     <div class="status-msg">Kết quả nghiệm thu</div>
                     <div class="status-badge-info">Tốt</div>
                 </div>
-            </div>
-    
-            <div class="project-card">
-                <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning Project" class="project-image">
-                <div class="project-info">
-                    <h2 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h2>
-                    <div class="project-details">
-                        <p>Chủ nhiệm: Ths.Trần Văn A</p>
-                        <p>Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+            </div> -->
+            
+            <div onclick="showDetail()" class="project-card">
+                <div class="project-image">
+                    <img src="./img/Blockchain-Applications-Analysed-through-Workshop-Sessions-1536x768.webp" alt="mLearning System">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Ứng dụng mới của Blockchain cho hệ thống thông tin và quản lý quy trình kinh doanh</h3>
+                    <p class="project-info">Chủ nhiệm: Ths.Trần Văn A</p>
+                    <p class="project-info">Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+                    <div class="project-status">
+                        <span class="in-progress status-badge">Đang thực hiện</span>
+                        <div class="status-result">
+                            <span>Kết quả nghiệm thu</span>
+                            <span class="result-badge in-progress">Chưa</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card-note">
-                    <div class="project-card-note-msg">Đã nghiệm thu</div> 
+            </div>
+
+            <div onclick="showDetail()" class="project-card">
+                <div class="project-image">
+                    <img src="./img/tri-tue-nhan-tao-ai-0.webp" alt="mLearning System">
                 </div>
-                <div class="status-badge">
-                    <div class="status-msg">Kết quả nghiệm thu</div>
-                    <div class="status-badge-info">Tốt</div>
+                <div class="project-details">
+                    <h3 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h3>
+                    <p class="project-info">Chủ nhiệm: Ths.Trần Văn A</p>
+                    <p class="project-info">Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+                    <div class="project-status">
+                        <span class="status-badge deleted">Đã hủy</span>
+                        <div class="status-result">
+                            <span>Kết quả nghiệm thu</span>
+                            <span class="result-badge deleted">Không có</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div onclick="showDetail()" class="project-card">
+                <div class="project-image">
+                    <img src="./img/What-Does-It-Mean-for-Computers.jpg" alt="mLearning System">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Nghiên cứu phát triển hệ thống mLearning ở quy mô nhỏ</h3>
+                    <p class="project-info">Chủ nhiệm: Ths.Trần Văn A</p>
+                    <p class="project-info">Thời gian thực hiện: 15/10/2021 - 20/12/2021</p>
+                    <div class="project-status">
+                        <span class="status-badge">Đã nghiệm thu</span>
+                        <div class="status-result">
+                            <span>Kết quả nghiệm thu</span>
+                            <span class="result-badge">Tốt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
         
@@ -186,7 +189,7 @@
 
         <!-- Trang chi tiết -->
     <div class="container detail-page" id="detailPage">
-        <button class="back-button" id="backButton">
+        <button onclick="hideDetail()" class="back-button" id="backButton">
             ← Quay lại
         </button>
 
@@ -242,7 +245,7 @@
             <h2 class="section-title">Kết quả nghiệm thu</h2>
             <div class="result-box">
                 <p>Ngày nghiệm thu: 20/12/2021</p>
-                <div class="achievement">Giải 3 cấp trường</div>
+                <div class="achievement"><span>Giải - Thành tựu:</span> Giải 3 cấp trường</div>
                 <p>Xếp loại nghiệm thu: Tốt</p>
             </div>
         </div>
@@ -255,5 +258,6 @@
 
     </main>
     <script src="main.js"></script>
+    
 </body>
 </html>
