@@ -143,51 +143,66 @@ function hideDetail() {
 
 
 //PHAN XU LY CHO 4 BUTTON TRANG THAI
-const buttons = document.querySelectorAll('.status-button');
-let selectedButtons = new Set(['all']); // Track selected buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const buttonContainer = document.querySelector('.dex-button-container');
+    if (!buttonContainer) return;
 
-buttons.forEach(button => {
-    button.addEventListener('click', function() {
-        const status = this.dataset.status;
-        
-        if (status === 'all') {
-            // If "Tất cả" is clicked
-            if (this.classList.contains('selected')) {
-                // If already selected, deselect it
-                this.classList.remove('selected');
-                selectedButtons.delete('all');
+    const buttons = buttonContainer.querySelectorAll('.status-btn');
+    const allButton = buttonContainer.querySelector('[data-status="all"]');
+
+    // Ngăn chặn sự kiện click từ các phần tử cha
+    buttonContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            if (this.dataset.status === 'all') {
+                // Nếu click vào nút "Tất cả"
+                buttons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
             } else {
-                // If not selected, select it and deselect others
-                buttons.forEach(btn => {
-                    btn.classList.remove('selected');
-                });
-                this.classList.add('selected');
-                selectedButtons.clear();
-                selectedButtons.add('all');
-            }
-        } else {
-            // If other button is clicked
-            const allButton = document.querySelector('[data-status="all"]');
-            allButton.classList.remove('selected');
-            selectedButtons.delete('all');
-
-            // Toggle current button
-            if (this.classList.contains('selected')) {
-                this.classList.remove('selected');
-                selectedButtons.delete(status);
+                // Nếu click vào các nút khác
+                allButton.classList.remove('active');
+                this.classList.toggle('active');
                 
-                // If no buttons are selected, select "Tất cả"
-                if (selectedButtons.size === 0) {
-                    allButton.classList.add('selected');
-                    selectedButtons.add('all');
+                // Kiểm tra nếu không có nút nào được chọn thì active nút "Tất cả"
+                const hasActiveButton = Array.from(buttons)
+                    .some(btn => btn !== allButton && btn.classList.contains('active'));
+                
+                if (!hasActiveButton) {
+                    allButton.classList.add('active');
                 }
-            } else {
-                this.classList.add('selected');
-                selectedButtons.add(status);
             }
-        }
-
-        // Log current selection state (you can replace this with your filter logic)
-        // console.log('Selected statuses:', Array.from(selectedButtons));
+        });
     });
 });
+// document.addEventListener('DOMContentLoaded', function() {
+//     const buttonGroup = document.querySelector('.status-button-group');
+//     const buttons = buttonGroup.querySelectorAll('.status-btn');
+//     const allButton = buttonGroup.querySelector('[data-status="all"]');
+
+//     buttons.forEach(button => {
+//         button.addEventListener('click', function() {
+//             if (this.dataset.status === 'all') {
+//                 // Nếu click vào nút "Tất cả"
+//                 buttons.forEach(btn => btn.classList.remove('active'));
+//                 this.classList.add('active');
+//             } else {
+//                 // Nếu click vào các nút khác
+//                 allButton.classList.remove('active');
+//                 this.classList.toggle('active');
+                
+//                 // Kiểm tra nếu không có nút nào được chọn thì active nút "Tất cả"
+//                 const hasActiveButton = Array.from(buttons)
+//                     .some(btn => btn !== allButton && btn.classList.contains('active'));
+                
+//                 if (!hasActiveButton) {
+//                     allButton.classList.add('active');
+//                 }
+//             }
+//         });
+//     });
+// });
