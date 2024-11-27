@@ -88,6 +88,17 @@ body {
     margin-top: 2px;
     font-size: 10px;
 }
+
+
+/*SIDEBAR*/
+.sidebar a.active {
+    background-color: #4a4a4a; 
+    color: #FFD700; 
+}
+
+.sidebar a.active i {
+    color: #FFD700;
+}
 .sidebar {
     position: fixed;
     left: 0;
@@ -667,3 +678,6 @@ input, select {
         min-width: calc(50% - 6px);
     }
 }
+
+
+/*NewDeTai*/

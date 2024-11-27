@@ -10,6 +10,20 @@ sidebarToggle.addEventListener('click', () => {
     toggleIcon.classList.toggle('fa-chevron-right');
 });
 
+//chuyển trạng thái thanh sidebar
+// document.addEventListener("DOMContentLoaded", () => {
+//     const menuItems = document.querySelectorAll(".menu-item");
+//     menuItems.forEach(item => {
+//         item.addEventListener("click", () => {
+//             // Loại bỏ trạng thái active khỏi tất cả các mục
+//             menuItems.forEach(i => i.classList.remove("active"));
+            
+//             // Thêm trạng thái "active" cho mục được click
+//             item.classList.add("active");
+//         });
+//     });
+// });
+
 //infor 
 let isEditing = false;
 
@@ -95,6 +109,13 @@ function savePassword() {
     alert('Đổi mật khẩu thành công!');
     closeModal();
 }
+
+const emailLeft = document.getElementById("email-left");
+const emailRight = document.getElementById("email-right");
+
+emailRight.addEventListener("input", function() {
+    emailLeft.value = emailRight.value;
+});
 
 // Đóng modal khi click bên ngoài
 // window.onclick = function(event) {
@@ -206,3 +227,36 @@ document.addEventListener('DOMContentLoaded', function() {
 //         });
 //     });
 // });
+
+
+//tuy chinh ngày tháng cho ô input datetime
+const fromDateInput = document.getElementById('fromDate');
+const toDateInput = document.getElementById('toDate');
+const fromDateDisplay = document.getElementById('fromDateDisplay');
+const toDateDisplay = document.getElementById('toDateDisplay');
+
+// Tạo đối tượng ánh xạ giữa số tháng và tên tháng tiếng Việt
+const monthNames = {
+    "01": "Tháng Một",
+    "02": "Tháng Hai",
+    "03": "Tháng Ba",
+    "04": "Tháng Tư",
+    "05": "Tháng Năm",
+    "06": "Tháng Sáu",
+    "07": "Tháng Bảy",
+    "08": "Tháng Tám",
+    "09": "Tháng Chín",
+    "10": "Tháng Mười",
+    "11": "Tháng Mười Một",
+    "12": "Tháng Mười Hai"
+};
+
+fromDateInput.addEventListener('change', () => {
+    const selectedMonth = fromDateInput.value.slice(5, 7);
+    fromDateDisplay.textContent = monthNames[selectedMonth] + ' ' + fromDateInput.value.slice(0, 4);
+});
+
+toDateInput.addEventListener('change', () => {
+    const selectedMonth = toDateInput.value.slice(5, 7);
+    toDateDisplay.textContent = monthNames[selectedMonth] + ' ' + toDateInput.value.slice(0, 4);
+});

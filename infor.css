@@ -117,3 +117,12 @@
     opacity: 0.9;
     transform: translateY(-1px);
 }
+
+.sidebar a.active {
+    background-color: #4a4a4a; 
+    color: #FFD700; 
+}
+
+.sidebar a.active i {
+    color: #FFD700;
+}
