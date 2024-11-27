@@ -47,7 +47,46 @@
     </nav>
 
     <main class="main-content">
-        
+        <form>
+            <h2>Tên để tài:</h2>
+            
+            <div class="form-group">
+              <label for="chu-nhiem">Chủ nhiệm:</label>
+              <input type="text" id="chu-nhiem" name="chu-nhiem" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="thoi-gian-thuc-hien">Thời gian thực hiện:</label>
+              <div>
+                <input type="text" id="tu" name="tu" placeholder="Từ" required>
+                <input type="text" id="den" name="den" placeholder="Đến" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="de-tai-cap">Đề tài cấp:</label>
+              <select id="de-tai-cap" name="de-tai-cap" required>
+                <option value="co-so">Cơ sở</option>
+                <option value="truong">Trường</option>
+                <option value="tinh">Tỉnh</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="loai">Loại:</label>
+              <select id="loai" name="loai" required>
+                <option value="de-tai-nghien-cuu-khoa-hoc-cua-giang-vien">Đề tài nghiên cứu khoa học của Giảng viên</option>
+                <option value="de-tai-nghien-cuu-khoa-hoc-cua-sinh-vien">Đề tài nghiên cứu khoa học của Sinh viên</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="giang-vien-tham-gia">Giảng viên Tham gia đề tài Nghiên cứu</label>
+              <textarea id="giang-vien-tham-gia" name="giang-vien-tham-gia" required></textarea>
+            </div>
+            
+            <button type="submit">Gửi</button>
+          </form>
     </main>
     <script src="main.js"></script>
 </body>
