@@ -260,3 +260,22 @@ toDateInput.addEventListener('change', () => {
     const selectedMonth = toDateInput.value.slice(5, 7);
     toDateDisplay.textContent = monthNames[selectedMonth] + ' ' + toDateInput.value.slice(0, 4);
 });
+
+
+//BUTTON THÊM ẢNH
+const uploadButton = document.querySelector('.upload-button');
+    const fileInput = document.querySelector('.file-input');
+    const imagePath = document.querySelector('.image-path');
+
+    uploadButton.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (file) {
+            imagePath.value = file.name;
+        } else {
+            imagePath.value = '';
+        }
+    });
