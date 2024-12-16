@@ -56,12 +56,11 @@
       <input type="text" id="project-name" class="input-field" placeholder="Nhập tên đề tài">
     </div>
 
-    <div class="row">
-      <div class="input-group">
-        <label class="project-picture" for="acceptance-date">Ảnh đề tài</label>
-        <input readonly>
-        <button type="button" id="upload-btn" class="upload-btn">+</button>
-      </div>
+    <div class="input-group">
+      <label class="project-picture" for="project-picture">Ảnh đề tài</label>
+      <input type="text" id="file-path" class="input-field" readonly>
+      <input type="file" id="file-input" style="display: none;" accept="image/*">
+      <button type="button" id="upload-btn" class="upload-btn">+</button>
     </div>
 
     <!-- Thông tin cơ bản -->
@@ -170,7 +169,7 @@
       <button type="reset" class="btn btn-reset">Hủy</button>
     </div>
   </main>
-  <script src="main.js"></script>
+  <script src="new.js"></script>
 </body>
 
 </html>

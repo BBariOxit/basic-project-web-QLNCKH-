@@ -762,8 +762,8 @@ input, select {
 .upload-btn {
     background-color: #00b894; /* Green color */
     color: white;
-    width: 65px;
-    height: 35px;
+    width: 80px;
+    height: 38px;
     border: none;
     padding: 10px;
     font-size: 16px;
@@ -772,6 +772,8 @@ input, select {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 2.5px;
 }
 
 /* Button hover effect */
@@ -879,6 +881,7 @@ input[disabled] {
 
 .btn-submit {
     background-color: #00b894; /* New green color */
+    color: white;
 }
 
 .btn-reset {
@@ -897,6 +900,6 @@ input[disabled] {
     font-size: 16px;
 }
 .project-name {
-    font-size: 30px;
+    
     color: var(--primary-color);
 }
